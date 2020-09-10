@@ -7,19 +7,19 @@ const Header = ({ siteTitle }) => (
     <Link to="/" activeClassName="active">
       Home
     </Link>
-    <Link to="/faq" activeClassName="active">
+    <Link to="/faq/" activeClassName="active">
       FAQ
     </Link>
-    <Link to="/setup" activeClassName="active">
+    <Link to="/setup/" activeClassName="active">
       ModLoader64 Setup
     </Link>
-    <Link to="/sdk" activeClassName="active">
+    <Link to="/sdk/" activeClassName="active">
       SDK Setup
     </Link>
-    <Link to="/mods" activeClassName="active">
+    <Link to="/mods/" activeClassName="active">
       Community Mods
     </Link>
-    <Link to="/models" activeClassName="active">
+    <Link to="/models/" activeClassName="active">
       Playas Models
     </Link>
   </header>
