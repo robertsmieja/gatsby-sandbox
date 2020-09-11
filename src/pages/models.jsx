@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 
 import Layout from "../components/layout"
-import AdultModelsTab from "../components/models/adult"
-import ChildModelsTab from "../components/models/child"
-import CombinedModelsTab from "../components/models/combined"
+import AdultModelsTab from "../components/models/tabs/adult"
+import ChildModelsTab from "../components/models/tabs/child"
+import CombinedModelsTab from "../components/models/tabs/combined"
 import SEO from "../components/seo"
 
 const adultModels = "Adult Models"
 const childModels = "Child Models"
 const combinedModels = "Combined Models"
 
-const getActiveTab = activeTab => {
+const getActiveTab = (activeTab) => {
   switch (activeTab) {
     case adultModels:
       return <AdultModelsTab />
@@ -26,17 +26,30 @@ const getActiveTab = activeTab => {
 export const ModelPage = () => {
   const [openTab, setOpenTab] = useState("")
 
+  const getClassName = (tabName) =>
+    `tablinks ${openTab === tabName ? "active" : ""}`
+
   return (
     <Layout>
       <SEO title="ModLoader64" />
+      <br />
       <div className="tab" style={{ width: "100%" }}>
-        <button className="tablinks" onClick={() => setOpenTab(adultModels)}>
+        <button
+          className={`${getClassName(adultModels)}`}
+          onClick={() => setOpenTab(adultModels)}
+        >
           Adult Models
         </button>
-        <button className="tablinks" onClick={() => setOpenTab(childModels)}>
+        <button
+          className={`${getClassName(childModels)}`}
+          onClick={() => setOpenTab(childModels)}
+        >
           Child Models
         </button>
-        <button className="tablinks" onClick={() => setOpenTab(combinedModels)}>
+        <button
+          className={`${getClassName(combinedModels)}`}
+          onClick={() => setOpenTab(combinedModels)}
+        >
           Combined Models
         </button>
       </div>

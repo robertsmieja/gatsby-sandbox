@@ -19,7 +19,7 @@ const FaqPage: React.FC<PageProps> = () => {
    * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
    */
   const data = useStaticQuery(graphql`
-    fragment ResizeImage on File {
+    fragment ResizeFaqImage on File {
       childImageSharp {
         fixed(width: 500, quality: 100) {
           ...GatsbyImageSharpFixed
@@ -29,35 +29,35 @@ const FaqPage: React.FC<PageProps> = () => {
 
     query {
       eperm: file(relativePath: { eq: "eperm.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       mupendll: file(relativePath: { eq: "mupendll.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       connectionloop: file(relativePath: { eq: "connectionloop.jpg" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       network: file(relativePath: { eq: "network.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       loadrom: file(relativePath: { eq: "loadrom.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       prereqs: file(relativePath: { eq: "prereqs.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       enoent: file(relativePath: { eq: "enoent.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
 
       ogl: file(relativePath: { eq: "ogl.png" }) {
-        ...ResizeImage
+        ...ResizeFaqImage
       }
     }
   `)
